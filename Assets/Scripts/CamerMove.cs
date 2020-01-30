@@ -6,8 +6,13 @@ public class CamerMove : MonoBehaviour
 {
     public int side;
     public int enter;
-    public Transform camera;
+    private Transform cameraTransform;
     public float movementSpeed;
+
+    private void Start()
+    {
+        cameraTransform = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Transform>();
+    }
 
     void OnMouseEnter()
     {
@@ -30,16 +35,28 @@ public class CamerMove : MonoBehaviour
             case 0:
                 break;
             case 1:
-                camera.position = camera.position + new Vector3(0, 1 * movementSpeed * Time.deltaTime, 0);
+                cameraTransform.position = cameraTransform.position + new Vector3(0, 1 * movementSpeed * Time.deltaTime, 0);
                 break;
             case 2:
-                camera.position = camera.position + new Vector3(0, -1 * movementSpeed * Time.deltaTime, 0);
+                cameraTransform.position = cameraTransform.position + new Vector3(0, -1 * movementSpeed * Time.deltaTime, 0);
                 break;
             case 3:
-                camera.position = camera.position + new Vector3(-1 * movementSpeed * Time.deltaTime,0, 0);
+                cameraTransform.position = cameraTransform.position + new Vector3(-1 * movementSpeed * Time.deltaTime,0, 0);
                 break;
             case 4:
-                camera.position = camera.position + new Vector3(1 * movementSpeed * Time.deltaTime, 0, 0);
+                cameraTransform.position = cameraTransform.position + new Vector3(1 * movementSpeed * Time.deltaTime, 0, 0);
+                break;
+            case 5:
+                cameraTransform.position = cameraTransform.position + new Vector3(1 * movementSpeed * Time.deltaTime, 1 * movementSpeed * Time.deltaTime, 0);
+                break;
+            case 6:
+                cameraTransform.position = cameraTransform.position + new Vector3(-1 * movementSpeed * Time.deltaTime, 1 * movementSpeed * Time.deltaTime, 0);
+                break;
+            case 7:
+                cameraTransform.position = cameraTransform.position + new Vector3(-1 * movementSpeed * Time.deltaTime, -1 * movementSpeed * Time.deltaTime, 0);
+                break;
+            case 8:
+                cameraTransform.position = cameraTransform.position + new Vector3(1 * movementSpeed * Time.deltaTime, -1 * movementSpeed * Time.deltaTime, 0);
                 break;
             default:
                 break;

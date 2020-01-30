@@ -9,9 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 79db7cc2fe70a794986aeb0a2c754daf
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/TestScenes/K.Dobrogost/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Game.unity
+    path: Assets/Scenes/TestScenes/K.Dobrogost/Game.unity
     guid: b56cb284db10b184b842d60b94af1550
   m_configObjects: {}

@@ -5,6 +5,12 @@ TextureImporter:
   - first:
       213: 9168171560474655026
     second: Human Buildings Summer_0
+  - first:
+      213: 48446808784703223
+    second: Human Buildings Summer_1
+  - first:
+      213: -5307215947879088062
+    second: Human Buildings Summer_2
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -109,7 +115,7 @@ TextureImporter:
         width: 133
         height: 129
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -117,6 +123,48 @@ TextureImporter:
       bones: []
       spriteID: 2393eed8573eb3f70800000000000000
       internalID: 9168171560474655026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Human Buildings Summer_1
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 585
+        width: 64
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fe0d1cad1e1ca000800000000000000
+      internalID: 48446808784703223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Human Buildings Summer_2
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 587
+        width: 71
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2400168d63bf856b0800000000000000
+      internalID: -5307215947879088062
       vertices: []
       indices: 
       edges: []
