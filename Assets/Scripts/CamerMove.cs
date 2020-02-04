@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CamerMove : MonoBehaviour
 {
+
+    //STARY KOD
     public int side;
     public int enter;
     private Transform cameraTransform;
@@ -26,8 +28,8 @@ public class CamerMove : MonoBehaviour
         enter = 0;
         Debug.Log("Exit");
     }
-   
 
+    //STARY KOD
     private void Update()
     {
         switch (enter)
@@ -63,5 +65,5 @@ public class CamerMove : MonoBehaviour
         }
     }
 
-
+    //STARY KOD
 }

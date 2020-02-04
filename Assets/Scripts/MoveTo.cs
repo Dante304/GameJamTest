@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class MoveTo : MonoBehaviour
 {
-    void Update()
+
+    private void Start()
+    {
+        this.transform.position = GameObject.FindGameObjectWithTag("Player1").transform.position;
+    }
+
+    private void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
