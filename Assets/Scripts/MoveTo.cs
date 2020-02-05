@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MoveTo : MonoBehaviour
 {
+    public bool turnOfMove { get; set; }
+
 
     private void Start()
     {
@@ -12,7 +14,7 @@ public class MoveTo : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !turnOfMove)
         {
             Vector3 pz = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             pz.z = 0;

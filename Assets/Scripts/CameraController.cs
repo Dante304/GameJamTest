@@ -76,7 +76,7 @@ public class CameraController : MonoBehaviour
         {
             GetComponent<Camera>().orthographicSize = GetComponent<Camera>().orthographicSize - 0.5f;
         }
-        else if (Input.GetAxis("Mouse ScrollWheel") < 0f && GetComponent<Camera>().orthographicSize < 8) // Zoom Out
+        else if (Input.GetAxis("Mouse ScrollWheel") < 0f && GetComponent<Camera>().orthographicSize < 10) // Zoom Out
         {
             GetComponent<Camera>().orthographicSize = GetComponent<Camera>().orthographicSize + 0.5f;
         }
