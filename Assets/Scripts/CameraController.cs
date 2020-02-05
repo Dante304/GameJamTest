@@ -48,22 +48,22 @@ public class CameraController : MonoBehaviour
 
         if (Input.GetKey("w") || Input.mousePosition.y >= Screen.height - panBorderThickness) //Up
         {
-            pos = this.transform.position + new Vector3(0, 1 * movementSpeed * Time.deltaTime, 0);
+            pos = pos + new Vector3(0, 1 * movementSpeed * Time.deltaTime, 0);
         }
 
         if (Input.GetKey("s") || Input.mousePosition.y <= panBorderThickness) //Down
         {
-            pos = this.transform.position + new Vector3(0, -1 * movementSpeed * Time.deltaTime, 0);
+            pos = pos + new Vector3(0, -1 * movementSpeed * Time.deltaTime, 0);
         }
 
         if (Input.GetKey("a") || Input.mousePosition.x <= panBorderThickness) //Left
         {
-            pos = this.transform.position + new Vector3(-1 * movementSpeed * Time.deltaTime, 0, 0);
+            pos = pos + new Vector3(-1 * movementSpeed * Time.deltaTime, 0, 0);
         }
 
         if (Input.GetKey("d") || Input.mousePosition.x >= Screen.width - panBorderThickness) //Right
         {
-            pos = this.transform.position + new Vector3(1 * movementSpeed * Time.deltaTime, 0, 0);
+            pos = pos + new Vector3(1 * movementSpeed * Time.deltaTime, 0, 0);
         }
 
         transform.position = pos;

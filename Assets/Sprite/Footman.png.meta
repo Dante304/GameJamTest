@@ -176,6 +176,93 @@ TextureImporter:
   - first:
       213: 2585293265214161342
     second: Footman_2
+  - first:
+      213: -3458393160731432201
+    second: Footman_55
+  - first:
+      213: -206660595321839532
+    second: Footman_56
+  - first:
+      213: 7178565338019453393
+    second: Footman_57
+  - first:
+      213: -1692149042999913269
+    second: Footman_58
+  - first:
+      213: -605035809824293646
+    second: Footman_59
+  - first:
+      213: 976906539492049554
+    second: Footman_60
+  - first:
+      213: 3723930067311855782
+    second: Footman_61
+  - first:
+      213: -7487989239894148378
+    second: Footman_62
+  - first:
+      213: -4550682326325542559
+    second: Footman_63
+  - first:
+      213: -6142558336455476660
+    second: Footman_64
+  - first:
+      213: 4990188210589377439
+    second: Footman_65
+  - first:
+      213: 2898492254475024307
+    second: Footman_66
+  - first:
+      213: 7773387284609785024
+    second: Footman_67
+  - first:
+      213: 3952921361801944904
+    second: Footman_68
+  - first:
+      213: 7043661342113425134
+    second: Footman_69
+  - first:
+      213: -2216401839534820255
+    second: Footman_70
+  - first:
+      213: -8557946812637277004
+    second: Footman_71
+  - first:
+      213: -8842613008586073094
+    second: Footman_72
+  - first:
+      213: 3429559665153632643
+    second: Footman_73
+  - first:
+      213: -838085621228319229
+    second: Footman_74
+  - first:
+      213: -6659115494213606060
+    second: Footman_75
+  - first:
+      213: -5776455215368356405
+    second: Footman_76
+  - first:
+      213: -7552408034889484075
+    second: Footman_77
+  - first:
+      213: -6633840314449766630
+    second: Footman_78
+  - first:
+      213: 1370168644608275685
+    second: Footman_79
+  - first:
+      213: 2947976153128175080
+    second: Footman_80
+  - first:
+      213: 7972242385782935529
+    second: Footman_81
+  - first:
+      213: -706426548275597654
+    second: Footman_82
+  - first:
+      213: 4403726619920643885
+    second: Footman_83
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -263,12 +350,12 @@ TextureImporter:
       name: Footman_0
       rect:
         serializedVersion: 2
-        x: 313
-        y: 564
-        width: 40
-        height: 50
+        x: 0
+        y: 570
+        width: 70
+        height: 54
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -276,6 +363,90 @@ TextureImporter:
       bones: []
       spriteID: 39db341af458d0b40800000000000000
       internalID: 5408125304596315539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Footman_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 510
+        width: 70
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a7488f3cf71c1a60800000000000000
+      internalID: 7646012639533352871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Footman_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 450
+        width: 70
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 958f44893289933f0800000000000000
+      internalID: -920537370174621607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Footman_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 400
+        width: 70
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cc15632ddf06e3a0800000000000000
+      internalID: -6636599558427829051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Footman_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 350
+        width: 70
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c33219da865779e0800000000000000
+      internalID: -1623733986296450111
       vertices: []
       indices: 
       edges: []
