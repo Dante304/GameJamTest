@@ -172,6 +172,11 @@ public class MainGameScript : MonoBehaviour
             return;
 
         _selectedBuilding.GetComponentInChildren<SpriteRenderer>().color = Color.blue;
+
+        if (Input.GetKeyDown(KeyCode.Delete))
+        {
+            BuildingManager.RemoveBuilding(0, _selectedBuilding.GetComponentInChildren<Building>());
+        }
     }
 
     private void CheckIfBuildingSelectNeeded()

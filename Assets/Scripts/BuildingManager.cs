@@ -72,6 +72,33 @@ public class BuildingManager : MonoBehaviour
         return true;
     }
 
+    public bool RemoveBuilding(int playerId, Building building)
+    {
+        if (building == null)
+            return false;
+
+        if (!_playersBuildings.ContainsKey(playerId))
+        {
+            _playersBuildings.Add(playerId, new int[Enum.GetValues(typeof(BuildingType)).Length]);
+            return false;
+        }
+
+        if (_playersBuildings[playerId].Length < (int)building.BuildingType + 1)
+            return false;
+
+        if (_playersBuildings[playerId][(int)building.BuildingType] == 0)
+            return false;
+
+        _playersBuildings[playerId][(int)building.BuildingType]--;
+        for (int i = 0; i < building.BuildCost.Length; i++)
+        {
+            ResourceManager.AddResource(playerId, (ResourceType)i, building.BuildCost[i] * 0.5m);
+        }
+        
+        Destroy(building.gameObject);
+        return true;
+    }
+
     public int[] GetBuildingsForPlayer(int playerId)
     {
         if (!_playersBuildings.ContainsKey(playerId))
