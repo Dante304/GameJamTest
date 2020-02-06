@@ -46,7 +46,7 @@ public class BuildingManager : MonoBehaviour
 
                 var tilePos = _grid.WorldToCell(position);
                 var spawnedBuilding = spawner.SpawnObject(building.BuildingType, position);
-                spawnedBuilding.layer = 9;
+                spawnedBuilding.layer = 10;
                 var newBuilding = spawnedBuilding.GetComponent<Building>();
                 newBuilding.name += $"_{_playersBuildings[playerId][(int)newBuilding.BuildingType] + 1}";
                 newBuilding._isActive = true;

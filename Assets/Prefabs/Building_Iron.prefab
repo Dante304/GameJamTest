@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 285687140}
   - component: {fileID: 1486231278703397990}
   - component: {fileID: 485001133}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Building_Iron
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7857047594529904832}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.900856, y: -3.5890932, z: -804.39575}
+  m_LocalPosition: {x: 9.900856, y: -3.5890932, z: -21.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7857047595259474058}
@@ -122,7 +122,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7857047595259474058}
   - component: {fileID: 7857047595259474059}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: hero-idle-back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -157,6 +157,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -168,6 +169,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -177,7 +179,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1107358795
+  m_SortingLayerID: -1140054595
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 4fc82fadd0e1d4ed8a697be473d72842, type: 3}

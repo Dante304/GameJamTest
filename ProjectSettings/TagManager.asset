@@ -7,6 +7,9 @@ TagManager:
   - Player1
   - Player2
   - Target
+  - ground
+  - building
+  - sprite
   layers:
   - Default
   - TransparentFX
@@ -43,4 +46,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Buildings
+    uniqueID: 3154912701
     locked: 0

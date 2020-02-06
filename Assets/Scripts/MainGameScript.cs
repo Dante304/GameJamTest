@@ -73,7 +73,7 @@ public class MainGameScript : MonoBehaviour
         {
             _holdingObject = spawner.SpawnObject(buildingType, Input.mousePosition);
             _holdingObject.name += "|holding";
-            _holdingObject.layer = 9;
+            _holdingObject.layer = 10;
         }
     }
 

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8829063871826875251}
   - component: {fileID: 8829063871826875252}
   - component: {fileID: 8829063871826875253}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Building_Stone
   m_TagString: building
   m_Icon: {fileID: 0}
@@ -122,7 +122,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8829063873305608474}
   - component: {fileID: 8829063873305608473}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: mole-walk-front-2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -157,6 +157,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -168,6 +169,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -177,7 +179,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1107358795
+  m_SortingLayerID: -1140054595
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 25f6063510d624f60968b12ef0c47cd7, type: 3}

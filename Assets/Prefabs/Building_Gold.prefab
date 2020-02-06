@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2101177597292008514}
   - component: {fileID: 2101177597292008525}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: hero-idle-front
   m_TagString: sprite
   m_Icon: {fileID: 0}
@@ -45,6 +45,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -56,6 +57,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -65,7 +67,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1107358795
+  m_SortingLayerID: -1140054595
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0f39a9205e4394ee1b6ba8269428d176, type: 3}
@@ -92,7 +94,7 @@ GameObject:
   - component: {fileID: 392685003111369174}
   - component: {fileID: 8201510988598220960}
   - component: {fileID: -6945009295686355781}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Building_Gold
   m_TagString: building
   m_Icon: {fileID: 0}
