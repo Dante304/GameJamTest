@@ -24,6 +24,11 @@ public class BuildingManager : MonoBehaviour
         
     }
 
+    public bool IsBuilding(GameObject gameObject)
+    {
+        return gameObject != null && gameObject.TryGetComponent(out Building building);
+    }
+
     public bool PlaceBuilding(int playerId, Building building, Vector3 position)
     {
         try

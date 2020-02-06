@@ -5,6 +5,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Tilemaps;
+using UnityEngine.UI;
 using UnityEngine.XR.WSA;
 using static Constants;
 
@@ -41,6 +42,8 @@ public class MainGameScript : MonoBehaviour
 
     void Update()
     {
+        CheckIfBuildingSelectNeeded();
+
         switch (_currentPlayerAction)
         {
             case CurrentPlayerAction.None:
@@ -161,20 +164,6 @@ public class MainGameScript : MonoBehaviour
 
     private void HandleNoActionUpdate()
     {
-        if (_currentPlayerAction == CurrentPlayerAction.None && Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
-        {
-            var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            mousePos.x = Mathf.Floor(mousePos.x) + 0.5f;
-            mousePos.y = Mathf.Floor(mousePos.y) + 0.25f;
-
-            var cellCoords = _grid.WorldToCell(mousePos);
-            var tile = _tilemapGround[0].GetTile(cellCoords);
-            _selectedBuilding = _tilemapGround[0].GetInstantiatedObject(cellCoords);
-            Debug.Log($"clicked cell: {cellCoords}");
-            
-            if (_selectedBuilding != null)
-                _currentPlayerAction = CurrentPlayerAction.SelectedBuilding;
-        }
     }
 
     private void HandleSelectedBuildingAction()
@@ -182,8 +171,34 @@ public class MainGameScript : MonoBehaviour
         if (_selectedBuilding == null)
             return;
 
-        Debug.Log("selected obj");
-
         _selectedBuilding.GetComponentInChildren<SpriteRenderer>().color = Color.blue;
+    }
+
+    private void CheckIfBuildingSelectNeeded()
+    {
+        if (_currentPlayerAction == CurrentPlayerAction.Building)
+            return;
+
+        if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
+        {
+            var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mousePos.x = Mathf.Floor(mousePos.x) + 0.5f;
+            mousePos.y = Mathf.Floor(mousePos.y) + 0.25f;
+
+            var hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+
+            if (BuildingManager.IsBuilding(_selectedBuilding))
+            {
+                _selectedBuilding.GetComponentInChildren<SpriteRenderer>().color = Color.white;
+                _currentPlayerAction = CurrentPlayerAction.None;
+            }
+
+            _selectedBuilding = hit.collider.gameObject;
+            if (BuildingManager.IsBuilding(_selectedBuilding))
+            {
+                _currentPlayerAction = CurrentPlayerAction.SelectedBuilding;
+            }
+
+        }
     }
 }
