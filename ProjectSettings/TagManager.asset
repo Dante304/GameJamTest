@@ -10,6 +10,7 @@ TagManager:
   - ground
   - building
   - sprite
+  - OrderContoller
   layers:
   - Default
   - TransparentFX
