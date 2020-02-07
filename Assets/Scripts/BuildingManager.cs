@@ -24,6 +24,13 @@ public class BuildingManager : MonoBehaviour
         
     }
 
+    public Building GetBuildingFromGameObject(GameObject buildingObject)
+    {
+        if (IsBuilding(buildingObject))
+            return buildingObject.GetComponent<Building>();
+        return null;
+    }
+
     public bool IsBuilding(GameObject gameObject)
     {
         return gameObject != null && gameObject.TryGetComponent(out Building building);
@@ -56,6 +63,8 @@ public class BuildingManager : MonoBehaviour
                 newBuilding.name += $"_{_playersBuildings[playerId][(int)newBuilding.BuildingType] + 1}";
                 newBuilding._isActive = true;
                 newBuilding.IsMoving = false;
+                newBuilding.HitPoints.Initialize(100, 100);
+                newBuilding.OwningPlayer = playerId;
                 if (!_playersBuildings.ContainsKey(playerId))
                     _playersBuildings.Add(playerId, new int[Enum.GetValues(typeof(BuildingType)).Length]);
 
@@ -73,7 +82,7 @@ public class BuildingManager : MonoBehaviour
         return true;
     }
 
-    public bool RemoveBuilding(int playerId, Building building)
+    public bool RemoveBuilding(int playerId, Building building, bool recoverResources = true)
     {
         if (building == null)
             return false;
@@ -91,9 +100,12 @@ public class BuildingManager : MonoBehaviour
             return false;
 
         _playersBuildings[playerId][(int)building.BuildingType]--;
-        for (int i = 0; i < building.BuildCost.Length; i++)
+        if (recoverResources)
         {
-            ResourceManager.AddResource(playerId, (ResourceType)i, building.BuildCost[i] * 0.5m);
+            for (int i = 0; i < building.BuildCost.Length; i++)
+            {
+                ResourceManager.AddResource(playerId, (ResourceType)i, building.BuildCost[i] * 0.5m);
+            }
         }
         
         Destroy(building.gameObject);
@@ -132,5 +144,33 @@ public class BuildingManager : MonoBehaviour
         }
 
         return true;
+    }
+
+    public bool DealDamage(Building building, float damage)
+    {
+        if (building == null)
+            return false;
+
+        building.HitPoints.CurrentValue -= damage;
+        return building.HitPoints.CurrentValue > 0;
+    }
+
+    public bool DealDamage(GameObject buildingObject, float damage)
+    {
+        return DealDamage(GetBuildingFromGameObject(buildingObject), damage);
+    }
+
+    public bool HealDamage(Building building, float damage)
+    {
+        if (building == null)
+            return false;
+
+        building.HitPoints.CurrentValue += damage;
+        return true;
+    }
+
+    public bool HealDamage(GameObject buildingObject, float damage)
+    {
+        return DealDamage(GetBuildingFromGameObject(buildingObject), damage);
     }
 }

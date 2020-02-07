@@ -123,6 +123,7 @@ GameObject:
   - component: {fileID: 6244425234508477090}
   - component: {fileID: 2269773352400809511}
   - component: {fileID: 430409006344709450}
+  - component: {fileID: 6193704183698809998}
   m_Layer: 10
   m_Name: HealthFill
   m_TagString: Untagged
@@ -185,6 +186,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6193704183698809998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1879011226432323104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e3b279a33222e46859aa5c165e5bb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _lerpSpeed: 2
 --- !u!1 &4787940381351253705
 GameObject:
   m_ObjectHideFlags: 0
@@ -244,7 +258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.36862746, g: 0.36862746, b: 0.36862746, a: 1}
   m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -493,8 +507,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfe3621f80e26b246befb5f8563703fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HealthBar: {fileID: 6576721188427084789}
-  SelectionBox: {fileID: 7324620452047718466}
+  _healthBar: {fileID: 6576721188427084789}
+  _selectionBox: {fileID: 7324620452047718466}
+  _hitPoints: {fileID: 6193704183698809998}
   _isValidPlacement: 1
   _isActive: 0
   ProducedResource: 3

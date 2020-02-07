@@ -8,27 +8,33 @@ using static Constants;
 public class Building : MonoBehaviour
 {
     [SerializeField]
-    private CanvasGroup HealthBar;
+    private CanvasGroup _healthBar;
     [SerializeField]
-    private CanvasGroup SelectionBox;
+    private CanvasGroup _selectionBox;
+    [SerializeField]
+    private HitPointsStat _hitPoints;
 
+    private BuildingManager _buildingManager;
 
     public bool _isValidPlacement = true;
     public bool _isActive = false;
     public ResourceType ProducedResource;
     public int ResourcePerTick;
     public BuildingType BuildingType;
-
+    
     public int[] BuildCost;
 
     private bool _isSelected = false;
 
     public bool IsMoving { get; set; }
 
-    public int HitPoints { get; set; }
+    public int OwningPlayer { get; set; }
+
+    public HitPointsStat HitPoints => _hitPoints;
 
     private void Start()
     {
+        _buildingManager = FindObjectOfType<BuildingManager>();
     }
 
     private void OnMouseEnter()
@@ -37,7 +43,7 @@ public class Building : MonoBehaviour
             return;
 
         if (!_isSelected)
-            SelectionBox.alpha = 1;
+            _selectionBox.alpha = 1;
     }
 
     private void OnMouseExit()
@@ -46,13 +52,26 @@ public class Building : MonoBehaviour
             return;
 
         if (!_isSelected)
-            SelectionBox.alpha = 0;
+            _selectionBox.alpha = 0;
     }
 
     private void Update()
     {
         if (IsMoving)
             return;
+
+        if (_isSelected && Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            _buildingManager.DealDamage(this, 20);
+        }
+
+        if (_isSelected && Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            _buildingManager.HealDamage(this, 20);
+        }
+
+        if (Mathf.Max(HitPoints.GetLerpHitPoints(), 0f) <= 0f)
+            _buildingManager.RemoveBuilding(OwningPlayer, this, false);
     }
 
     public void Select()
@@ -61,8 +80,8 @@ public class Building : MonoBehaviour
             return;
 
         _isSelected = true;
-        HealthBar.alpha = 1;
-        SelectionBox.alpha = 1;
+        _healthBar.alpha = 1;
+        _selectionBox.alpha = 1;
         GetComponentInChildren<SpriteRenderer>().color = Color.yellow;
     }
 
@@ -72,8 +91,8 @@ public class Building : MonoBehaviour
             return;
 
         _isSelected = false;
-        HealthBar.alpha = 0;
-        SelectionBox.alpha = 0;
+        _healthBar.alpha = 0;
+        _selectionBox.alpha = 0;
         GetComponentInChildren<SpriteRenderer>().color = Color.white;
     }
 }
