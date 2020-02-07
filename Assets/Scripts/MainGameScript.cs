@@ -116,6 +116,7 @@ public class MainGameScript : MonoBehaviour
         }*/
 
         var building = _holdingObject.GetComponent<Building>();
+        building.IsMoving = true;
         var enoughResources = BuildingManager.HaveEnoughResources(0, building);
 
         if (!building._isValidPlacement || !enoughResources)
@@ -171,8 +172,6 @@ public class MainGameScript : MonoBehaviour
         if (_selectedBuilding == null)
             return;
 
-        _selectedBuilding.GetComponentInChildren<SpriteRenderer>().color = Color.blue;
-
         if (Input.GetKeyDown(KeyCode.Delete))
         {
             BuildingManager.RemoveBuilding(0, _selectedBuilding.GetComponentInChildren<Building>());
@@ -194,16 +193,17 @@ public class MainGameScript : MonoBehaviour
 
             if (BuildingManager.IsBuilding(_selectedBuilding))
             {
-                _selectedBuilding.GetComponentInChildren<SpriteRenderer>().color = Color.white;
+                _selectedBuilding.GetComponentInChildren<Building>().Deselect();
                 _currentPlayerAction = CurrentPlayerAction.None;
             }
 
             _selectedBuilding = hit.collider.gameObject;
             if (BuildingManager.IsBuilding(_selectedBuilding))
             {
+                _selectedBuilding.GetComponentInChildren<Building>().Select();
+
                 _currentPlayerAction = CurrentPlayerAction.SelectedBuilding;
             }
-
         }
     }
 }

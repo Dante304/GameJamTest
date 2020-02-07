@@ -55,6 +55,7 @@ public class BuildingManager : MonoBehaviour
                 var newBuilding = spawnedBuilding.GetComponent<Building>();
                 newBuilding.name += $"_{_playersBuildings[playerId][(int)newBuilding.BuildingType] + 1}";
                 newBuilding._isActive = true;
+                newBuilding.IsMoving = false;
                 if (!_playersBuildings.ContainsKey(playerId))
                     _playersBuildings.Add(playerId, new int[Enum.GetValues(typeof(BuildingType)).Length]);
 
