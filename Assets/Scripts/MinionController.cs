@@ -9,13 +9,13 @@ public class MinionController : MonoBehaviour
     public Transform defenseTarget;
     public OrderPanelController orderPanel;
     public OrderPanelController.Orders activeOrder;
-    private AIPath aIPath;
+    private AILerp aIPath;
     private AIDestinationSetter aIDestinationSetter;
 
     private void Start()
     {
         aIDestinationSetter = GetComponent<AIDestinationSetter>();
-        aIPath = GetComponent<AIPath>();
+        aIPath = GetComponent<AILerp>();
     }
 
     private void Update()
