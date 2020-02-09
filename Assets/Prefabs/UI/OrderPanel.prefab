@@ -498,7 +498,7 @@ GameObject:
   - component: {fileID: 4676741027837009764}
   m_Layer: 5
   m_Name: OrderPanel
-  m_TagString: Untagged
+  m_TagString: OrderContoller
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
