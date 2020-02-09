@@ -8,10 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: 79db7cc2fe70a794986aeb0a2c754daf
-  - enabled: 1
-    path: Assets/Scenes/TestScenes/K.Dobrogost/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
     path: Assets/Scenes/TestScenes/K.Dobrogost/Game.unity
     guid: b56cb284db10b184b842d60b94af1550
+  - enabled: 1
+    path: Assets/Scenes/TestScenes/K.Dobrogost/Game2.unity
+    guid: 9121153c5eac65641b5909cbd0647fb4
   m_configObjects: {}
