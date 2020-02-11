@@ -58,13 +58,20 @@ public class BuildingManager : MonoBehaviour
 
                 var tilePos = _grid.WorldToCell(position);
                 var spawnedBuilding = spawner.SpawnObject(building.BuildingType, position);
+                var hpBar = spawner.SpawnHealthBar(position + new Vector3(0, 1, 0));
+                hpBar.transform.SetParent(spawnedBuilding.transform, true);
                 spawnedBuilding.layer = 10;
                 var newBuilding = spawnedBuilding.GetComponent<Building>();
                 newBuilding.name += $"_{_playersBuildings[playerId][(int)newBuilding.BuildingType] + 1}";
                 newBuilding._isActive = true;
                 newBuilding.IsMoving = false;
+                newBuilding.HitPoints = hpBar.GetComponentInChildren<HitPointsStat>();
                 newBuilding.HitPoints.Initialize(100, 100);
                 newBuilding.OwningPlayer = playerId;
+        
+
+                
+
                 if (!_playersBuildings.ContainsKey(playerId))
                     _playersBuildings.Add(playerId, new int[Enum.GetValues(typeof(BuildingType)).Length]);
 

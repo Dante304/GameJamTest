@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
@@ -30,7 +31,7 @@ public class Building : MonoBehaviour
 
     public int OwningPlayer { get; set; }
 
-    public HitPointsStat HitPoints => _hitPoints;
+    public HitPointsStat HitPoints { get; set; }
 
     private void Start()
     {
