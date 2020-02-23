@@ -10,21 +10,6 @@ public class CastleController : MonoBehaviour
         
     }
 
-    void OnMouseOver()
-    {
-        Debug.Log(this.gameObject.name);
-    }
-
-    private void OnMouseEnter()
-    {
-        Debug.Log(this.gameObject.name + " ENTER");
-    }
-
-    private void OnMouseExit()
-    {
-        Debug.Log(this.gameObject.name +  " EXIT");
-    }
-
     // Update is called once per frame
     void Update()
     {

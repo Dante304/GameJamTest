@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Pathfinding;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,11 +14,21 @@ public class OrderPanelController : MonoBehaviour
     public Sprite defenseSprite;
 
     public Image activeStatus;
+    public Transform attackTarget;
 
+    public GameObject[] targetsTab;
+    public List<Transform> targetsPosition;
 
-
+    public GameObject pointsToMove;
     public void AttackOrder()
     {
+        targetsTab = GameObject.FindGameObjectsWithTag("MinionTarget");
+
+        for (int i = 0; i < targetsTab.Length; i++)
+        {
+            targetsTab[i].transform.position = new Vector3(attackTarget.position.x + i,attackTarget.position.y + i, attackTarget.position.z);
+        }
+
         activeStatus.sprite = attackSprite;
         activeOrder = Orders.Attack;
     }

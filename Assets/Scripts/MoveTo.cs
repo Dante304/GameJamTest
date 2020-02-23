@@ -5,11 +5,15 @@ using UnityEngine;
 public class MoveTo : MonoBehaviour
 {
     public bool turnOfMove { get; set; }
-
+    public bool test;
+    public OrderPanelController orderPanelController;
 
     private void Start()
     {
-        this.transform.position = GameObject.FindGameObjectWithTag("Player1").transform.position;
+        if (!test)
+        {
+            this.transform.position = GameObject.FindGameObjectWithTag("Player1").transform.position;
+        }
     }
 
     private void Update()
@@ -19,6 +23,11 @@ public class MoveTo : MonoBehaviour
             Vector3 pz = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             pz.z = 0;
             gameObject.transform.position = pz;
+
+            if (test)
+            {
+                orderPanelController.AttackOrder();
+            }
         }
     }
 }

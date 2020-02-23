@@ -1,8 +1,6 @@
 ﻿using Pathfinding;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class MinionController : MonoBehaviour
 {
     public Transform attackTarget;
@@ -11,7 +9,8 @@ public class MinionController : MonoBehaviour
     public OrderPanelController.Orders activeOrder;
     private AILerp aIPath;
     private AIDestinationSetter aIDestinationSetter;
-
+    public NavGraph navGraph;
+    public bool testOn;
     private void Start()
     {
         aIDestinationSetter = GetComponent<AIDestinationSetter>();
@@ -40,4 +39,5 @@ public class MinionController : MonoBehaviour
         }
 
     }
+
 }

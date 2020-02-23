@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace Pathfinding {
 	/// <summary>
@@ -11,17 +12,20 @@ namespace Pathfinding {
 	/// It is not meant to be pretty, but it does the job.
 	/// </summary>
 	[HelpURL("http://arongranberg.com/astar/docs/class_pathfinding_1_1_target_mover.php")]
-	public class TargetMover : MonoBehaviour {
+	public class TargetMover : MonoBehaviour 
+	{
 		/// <summary>Mask for the raycast placement</summary>
 		public LayerMask mask;
-
+		public float maxX;
+		public float maxY;
 		public Transform target;
+		public GameObject flag;
+		public List<GameObject> listOfFlags;
 		IAstarAI[] ais;
 
 		/// <summary>Determines if the target position should be updated every frame or only on double-click</summary>
 		public bool onlyOnDoubleClick;
 		public bool use2D;
-
 		Camera cam;
 
 		public void Start () {
@@ -72,6 +76,33 @@ namespace Pathfinding {
 					}
 				}
 			}
+
+			foreach (var item in listOfFlags)
+			{
+				Destroy(item);
+			}
+			listOfFlags.Clear();
+			var lisOfUnits = GameObject.FindGameObjectsWithTag("Unit");
+			foreach (var item in lisOfUnits)
+			{
+				item.GetComponent<AIDestinationSetter>().flag = PointAroundTarget(target.position);
+				item.GetComponent<AIDestinationSetter>().target = item.GetComponent<AIDestinationSetter>().flag.transform;
+			
+				item.GetComponent<AILerp>().canMove = true;
+			}
+		}
+
+
+
+		public GameObject PointAroundTarget(Vector3 targetPosition)
+		{
+			Debug.Log($@"Target position: {targetPosition}");
+
+			targetPosition.x = targetPosition.x + Random.Range(-maxX, maxX);
+			targetPosition.y = targetPosition.y + Random.Range(-maxY, maxY);
+			var flagObject = Instantiate(flag, targetPosition, Quaternion.identity);
+			listOfFlags.Add(flagObject);
+			return flagObject;
 		}
 	}
 }

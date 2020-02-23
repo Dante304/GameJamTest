@@ -1410,6 +1410,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lerpSpeed: 2
+  _slider: {fileID: 0}
+  _gradient:
+    serializedVersion: 2
+    key0: {r: 1, g: 1, b: 1, a: 1}
+    key1: {r: 1, g: 1, b: 1, a: 1}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
+  _fillImage: {fileID: 0}
 --- !u!114 &1737248127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2061,6 +2092,7 @@ MonoBehaviour:
   - {fileID: 362159509052255471, guid: bbb4a4344b645404685d410051715b76, type: 3}
   - {fileID: 7857047594529904832, guid: 8382d7dc24873794c9c962e1232d21cb, type: 3}
   - {fileID: 8829063871826875255, guid: acd4f216b3fea3848b5bf3a4fed113ea, type: 3}
+  HpBarCanvas: {fileID: 0}
 --- !u!1 &3762257709080074123
 GameObject:
   m_ObjectHideFlags: 0
@@ -3450,6 +3482,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 195207051}
     m_Modifications:
+    - target: {fileID: 813920492, guid: a689549b7f421f04e87d244f353110c6, type: 3}
+      propertyPath: interpolatePathSwitches
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6263069304567990364, guid: a689549b7f421f04e87d244f353110c6,
         type: 3}
       propertyPath: m_LocalPosition.x

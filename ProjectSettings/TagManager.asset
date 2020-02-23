@@ -11,6 +11,8 @@ TagManager:
   - building
   - sprite
   - OrderContoller
+  - Unit
+  - MinionTarget
   layers:
   - Default
   - TransparentFX
