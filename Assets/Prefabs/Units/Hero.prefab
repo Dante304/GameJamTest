@@ -133,6 +133,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   target: {fileID: 0}
+  flag: {fileID: 0}
+  setDestinationAroundTarget: 0
 --- !u!114 &1321587187285333760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,7 +195,7 @@ MonoBehaviour:
   orientation: 1
   enableRotation: 1
   rotationSpeed: 30
-  interpolatePathSwitches: 1
+  interpolatePathSwitches: 0
   switchPathInterpolationSpeed: 10
   targetCompatibility: {fileID: 0}
 --- !u!61 &1264476833

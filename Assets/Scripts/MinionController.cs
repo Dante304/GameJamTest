@@ -9,8 +9,6 @@ public class MinionController : MonoBehaviour
     public OrderPanelController.Orders activeOrder;
     private AILerp aIPath;
     private AIDestinationSetter aIDestinationSetter;
-    public NavGraph navGraph;
-    public bool testOn;
     private void Start()
     {
         aIDestinationSetter = GetComponent<AIDestinationSetter>();

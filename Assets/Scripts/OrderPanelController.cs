@@ -14,19 +14,27 @@ public class OrderPanelController : MonoBehaviour
     public Sprite defenseSprite;
 
     public Image activeStatus;
-    public Transform attackTarget;
 
-    public GameObject[] targetsTab;
-    public List<Transform> targetsPosition;
+    public Transform target;
 
-    public GameObject pointsToMove;
+    public float maxX;
+    public float maxY;
+    public GameObject flag;
+    public List<GameObject> listOfFlags;
     public void AttackOrder()
     {
-        targetsTab = GameObject.FindGameObjectsWithTag("MinionTarget");
-
-        for (int i = 0; i < targetsTab.Length; i++)
+        foreach (var item in listOfFlags)
         {
-            targetsTab[i].transform.position = new Vector3(attackTarget.position.x + i,attackTarget.position.y + i, attackTarget.position.z);
+            Destroy(item);
+        }
+        listOfFlags.Clear();
+        var lisOfUnits = GameObject.FindGameObjectsWithTag("Unit");
+        foreach (var item in lisOfUnits)
+        {
+            item.GetComponent<AIDestinationSetter>().flag = PointAroundTarget(target.position);
+            item.GetComponent<MinionController>().attackTarget = item.GetComponent<AIDestinationSetter>().flag.transform;
+
+            item.GetComponent<AILerp>().canMove = true;
         }
 
         activeStatus.sprite = attackSprite;
@@ -43,5 +51,17 @@ public class OrderPanelController : MonoBehaviour
     {
         activeStatus.sprite = defenseSprite;
         activeOrder = Orders.Defense;
+    }
+
+
+    public GameObject PointAroundTarget(Vector3 targetPosition)
+    {
+        Debug.Log($@"Target position: {targetPosition}");
+
+        targetPosition.x = targetPosition.x + Random.Range(-maxX, maxX);
+        targetPosition.y = targetPosition.y + Random.Range(-maxY, maxY);
+        var flagObject = Instantiate(flag, targetPosition, Quaternion.identity);
+        listOfFlags.Add(flagObject);
+        return flagObject;
     }
 }
